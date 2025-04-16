@@ -69,7 +69,7 @@ This project demonstrates how to replace expensive Finite Element Analysis (FEA)
 ## 📬 Author
 
 **Atharva Sinnarkar**  
-MSc Simulation & Modeling  
+MSc Computational Engineering  
 [GitHub Profile](https://github.com/Atharva224)
 
 ---
