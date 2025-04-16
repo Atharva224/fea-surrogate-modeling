@@ -22,25 +22,17 @@ This project demonstrates how to replace expensive Finite Element Analysis (FEA)
 | Programming        | Python               |
 | ML Algorithms      | scikit-learn (Random Forest) |
 | Data Processing    | pandas, NumPy        |
-| Visualization      | matplotlib, seaborn  |
-
----
-
-## 📁 Folder Structure
-
-fea-surrogate-modeling/ │ ├── data/ # FEA datasets (CSV) │ ├── fea_dataset.csv │ └── fea_dataset_with_hole.csv │ ├── plots/ # Saved result plots │ ├── Displacement response to force and hole radius.png │ └── Visualizing Stress vs Force & Hole Radius.png │ ├── scripts/ # Python scripts │ ├── generate_dataset.py │ ├── generate_dataset_with_hole.py │ ├── plate_simulation.py │ ├── train_surrogate_plate.py │ ├── train_surrogate_with_hole.py │ ├── plot_displacement_surface.py │ └── Visualize Stress vs Force and Hole Radius.py │ ├── README.md └── .gitignore
-
-
+| Visualization      | matplotlib           |
 
 ---
 
 ## 📊 Sample Outputs
 
 ### Displacement Response Surface  
-<img src="plots/Displacement%20response%20to%20force%20and%20hole%20radius.png" width="600"/>
+![Displacement](Displacement%20response%20to%20force%20and%20hole%20radius.png)
 
 ### Stress Response Surface  
-<img src="plots/Visualizing%20Stress%20vs%20Force%20&%20Hole%20Radius.png" width="600"/>
+![Stress](Visualizing%20Stress%20vs%20Force%20&%20Hole%20Radius.png)
 
 ---
 
@@ -48,8 +40,8 @@ fea-surrogate-modeling/ │ ├── data/ # FEA datasets (CSV) │ ├── f
 
 | Output         | R² Score |
 |----------------|----------|
-| Displacement   | 0.936    |
-| Stress         | 0.9997   |
+| Displacement   | ~0.936   |
+| Stress         | ~0.9997  |
 
 ---
 
@@ -78,7 +70,7 @@ fea-surrogate-modeling/ │ ├── data/ # FEA datasets (CSV) │ ├── f
 
 **Atharva Sinnarkar**  
 MSc Simulation & Modeling  
-[GitHub Profile](https://github.com/yourusername) | [LinkedIn](https://www.linkedin.com/in/yourprofile)
+[GitHub Profile](https://github.com/Atharva224)
 
 ---
 
