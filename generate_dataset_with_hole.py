@@ -1,1 +1,1 @@
-Email atharvasinnarkar.gmail.com for the file
+Email atharvasinnarkar@gmail.com for the file
