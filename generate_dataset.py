@@ -25,49 +25,5 @@ for E in E_list:
         mapdl.mp('EX', 1, E)
         mapdl.mp('PRXY', 1, nu)
 
-        # Element
-        mapdl.et(1, 'PLANE183')
-        mapdl.keyopt(1, 3, 3)
-        mapdl.r(1, thickness)
 
-        # Geometry and mesh
-        mapdl.blc4(0, 0, length, height)
-        mapdl.esize(0.01)
-        mapdl.amesh("ALL")
-
-        # Boundary conditions
-        mapdl.nsel("S", "LOC", "X", 0)
-        mapdl.d("ALL", "ALL")
-        mapdl.nsel("S", "LOC", "X", length)
-        pressure = force / (height * thickness)
-        mapdl.sf("ALL", "PRES", pressure)
-        mapdl.allsel()
-
-        # Solve
-        mapdl.run("/SOLU")
-        mapdl.antype("STATIC")
-        mapdl.solve()
-        mapdl.finish()
-
-        # Post-processing
-        mapdl.post1()
-        mapdl.set(1)
-
-        disp = mapdl.post_processing.nodal_displacement("X")
-        stress = mapdl.post_processing.element_stress("EQV")
-
-        max_disp = np.max(np.abs(disp))
-        max_stress = np.max(np.abs(stress))
-
-        print(f"E={E:.1e}, F={force} -> Umax={max_disp:.2e} m, Smax={max_stress:.2e} Pa")
-
-        # Save results
-        results.append([E, force, max_disp, max_stress])
-
-# Convert to DataFrame
-df = pd.DataFrame(results, columns=["Youngs_Modulus", "Force", "Max_Displacement", "Max_Stress"])
-df.to_csv("fea_dataset.csv", index=False)
-
-print("Dataset saved to fea_dataset.csv")
-
-mapdl.exit()
+#Keeping the original work safe. Email atharvasinnarkar@gmail.com for the file and mention the proper usecase.
