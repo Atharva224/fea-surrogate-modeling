@@ -34,50 +34,5 @@ for E in E_list:
                 mapdl.keyopt(1, 3, 3)  # Plane stress with thickness
                 mapdl.r(1, thickness)
 
-                # Geometry
-                x_center = length / 2
-                y_center = height / 2
-                mapdl.blc4(0, 0, length, height)              # Plate
-                mapdl.cyl4(x_center, y_center, hole_radius)   # Hole
-                mapdl.asba(1, 2)                              # Subtract hole from plate
 
-                # Mesh
-                mapdl.esize(0.002)
-                mapdl.amesh("ALL")
-
-                # Boundary Conditions
-                mapdl.nsel("S", "LOC", "X", 0)
-                mapdl.d("ALL", "ALL")
-                mapdl.nsel("S", "LOC", "X", length)
-                pressure = force / (height * thickness)
-                mapdl.sf("ALL", "PRES", pressure)
-                mapdl.allsel()
-
-                # Solve
-                mapdl.run("/SOLU")
-                mapdl.antype("STATIC")
-                mapdl.solve()
-                mapdl.finish()
-
-                # Post-processing
-                mapdl.post1()
-                mapdl.set(1)
-                disp = mapdl.post_processing.nodal_displacement("X")
-                stress = mapdl.post_processing.element_stress("EQV")
-                max_disp = np.max(np.abs(disp))
-                max_stress = np.max(np.abs(stress))
-
-                print(f"E={E:.1e}, F={force}, r={hole_radius:.3f} → Umax={max_disp:.2e} m, Smax={max_stress:.2e} Pa")
-                results.append([E, force, hole_radius, max_disp, max_stress])
-
-            except Exception as e:
-                print(f"Error: E={E}, F={force}, r={hole_radius:.3f} - {e}")
-                continue
-
-# Save dataset
-df = pd.DataFrame(results, columns=["Youngs_Modulus", "Force", "Hole_Radius", "Max_Displacement", "Max_Stress"])
-csv_path = "fea_dataset_with_hole.csv"
-df.to_csv(csv_path, index=False)
-
-print(f"Dataset saved to {csv_path}")
-mapdl.exit()
+#Keeping the original work safe. Email atharvasinnarkar@gmail.com for the file and mention the proper usecase.
