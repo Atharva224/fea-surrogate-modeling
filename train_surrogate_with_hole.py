@@ -23,28 +23,4 @@ disp_model.fit(X_train, y_disp_train)
 stress_model = RandomForestRegressor(n_estimators=100, random_state=42)
 stress_model.fit(X_train, y_stress_train)
 
-# Predictions
-disp_pred = disp_model.predict(X_test)
-stress_pred = stress_model.predict(X_test)
-
-# Evaluation
-print("Displacement R² Score:", r2_score(y_disp_test, disp_pred))
-print("Stress R² Score:", r2_score(y_stress_test, stress_pred))
-
-# Plot
-plt.figure(figsize=(12, 5))
-
-plt.subplot(1, 2, 1)
-plt.scatter(y_disp_test, disp_pred, color='blue')
-plt.xlabel("True Displacement")
-plt.ylabel("Predicted Displacement")
-plt.title("Displacement Prediction")
-
-plt.subplot(1, 2, 2)
-plt.scatter(y_stress_test, stress_pred, color='red')
-plt.xlabel("True Stress")
-plt.ylabel("Predicted Stress")
-plt.title("Stress Prediction")
-
-plt.tight_layout()
-plt.show()
+#Keeping the original work safe. Email atharvasinnarkar@gmail.com for the file and mention the proper usecase.
